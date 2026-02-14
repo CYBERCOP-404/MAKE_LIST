@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeamInfo Premium - Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-black: #000000;
+        --primary-white: #ffffff;
+      }
+
+      body {
+        font-family: 'Hind Siliguri', 'Inter', sans-serif;
+        background-color: #f8fafc;
+        margin: 0;
+        color: var(--primary-black);
+        scroll-behavior: smooth;
+        padding-bottom: 80px; /* Space for footer */
+      }
+
+      /* A4 Page Formatting */
+      .a4-page {
+        width: 210mm;
+        min-height: 297mm;
+        background: white;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        padding: 15mm 20mm;
+        margin: 0 auto 30px auto;
+        position: relative;
+        color: black;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .official-font {
+        font-family: 'Hind Siliguri', sans-serif !important;
+        line-height: 1.6;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid black;
+      }
+      
+      th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        outline: none;
+      }
+
+      th {
+        background-color: #f3f4f6;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9fafb;
+      }
+
+      [contenteditable="true"]:focus {
+        background-color: rgba(0,0,0,0.03);
+        outline: none;
+      }
+
+      .logo-img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        border: none;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .glass-footer {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.7);
+        border-top: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .document-scroller {
+        width: 100%;
+        overflow-x: auto;
+        padding: 20px 10px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      @media print {
+        .no-print { display: none !important; }
+        body { background: white !important; margin: 0 !important; padding-bottom: 0 !important; }
+        .document-scroller { padding: 0 !important; overflow: visible !important; }
+        .a4-page { 
+          margin: 0 !important; 
+          box-shadow: none !important; 
+          border: none !important;
+          page-break-after: always;
+        }
+      }
+
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-slide-up { animation: slideUp 0.5s ease-out; }
+
+      .btn-active:active {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+        "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+        "jszip": "https://esm.sh/jszip@^3.10.1",
+        "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
